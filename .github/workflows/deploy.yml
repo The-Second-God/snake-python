@@ -26,9 +26,9 @@ jobs:
       - name: 构建项目
         run: npm run build
 
-      - name: 部署到 gh-pages 分支
-        uses: peaceiris/actions-gh-pages@v4
+      - name: 部署
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          force_orphan: true
+          folder: dist
+          branch: gh-pages
+          clean: true
